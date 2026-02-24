@@ -1,10 +1,22 @@
+import java.util.ArrayList;
+
 public class planes {
     private String matricula;
     private int autonomy;
     private int posX;
     private int posY;
     private int capacity;
-    private pilot pilots;
+    private ArrayList<pilot> pilots = new ArrayList<pilot>();
+
+    public planes(String matricula, int autonomy, int posX, int posY, int capacity, pilot pilot, pilot copilot) {
+        this.matricula = matricula;
+        this.autonomy = autonomy;
+        this.posX = posX;
+        this.posY = posY;
+        this.capacity = capacity;
+        this.pilots.add(pilot);
+        this.pilots.add(copilot);
+    }
 
     public String getMatricula() {
         return matricula;
@@ -37,6 +49,14 @@ public class planes {
         this.capacity = capacity;
     }
 
-
-
+    public pilot getPilot() {
+        return pilots.get(0);
+    }
+    public void addPilot(pilot pilot) {
+        this.pilots.add(pilot);
+    }
+    public pilot getCopilot() {
+        return pilots.get(1);
+    }
+        
 }
